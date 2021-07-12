@@ -1,4 +1,5 @@
 from hardware import Tstat
+import pandas as pd
 
-device = Tstat('/dev/ttyUSB0')
-print(device.read_console(5))
+data = pd.read_csv("out/Archive/TD2Q_11_data.csv", sep='\t')
+print(data)
