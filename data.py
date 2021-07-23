@@ -6,6 +6,7 @@ from datetime import time
 from hardware import Tstat, RPi
 from test_logs import setup_logger
 
+PATH = "/home/pi/Desktop/PIR_Noise_Floor_Test"
 
 class Compiler:
     device = Tstat('/dev/ttyUSB0')
@@ -15,7 +16,7 @@ class Compiler:
         self.test_number = test_number
         self.sensor_data = {}
 
-        path = os.path.join('/home/pi/Desktop/PIR_Noise_Floor_Test/out', f'test_{test_number}')
+        path = os.path.join(f'{PATH}/out', f'test_{test_number}')
         os.mkdir(path)
         path = os.path.join(path, 'logs')
         os.mkdir(path)
